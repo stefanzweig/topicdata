@@ -1,0 +1,22 @@
+struct canMessage
+{
+    uint32 channel;
+    uint32 id;
+    uint8 dlc;
+    uint16 dataLen;
+    sequence<uint8> data;
+    uint64 cycTime;
+    uint16 flags;
+    uint64 timeStamp;
+    int64 timeStamp_d;
+    uint8 rxtx;
+    uint8 isFd;
+    uint8 isRt;
+    uint8 isExt;
+    uint8 errorCode;
+};
+
+struct canMessages {
+    uint64 len;
+    sequence<canMessage> canMsgs;
+};
