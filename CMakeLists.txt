@@ -40,5 +40,5 @@ endif()
 message(STATUS "Configuring HelloWorld publisher/subscriber example...")
 file(GLOB DDSCANMESSAGEDATA_SOURCES_CXX "./*.cxx")
 
-add_executable(DDSCANMESSAGEDATA_Publisher ./CanMessageDataPublisher.cpp ${DDSCANMESSAGEDATA_SOURCES_CXX})
+add_executable(DDSCANMESSAGEDATA_Publisher ./CanMessageDataWorkerPublisher.cpp ${DDSCANMESSAGEDATA_SOURCES_CXX})
 target_link_libraries(DDSCANMESSAGEDATA_Publisher fastrtps fastcdr)
