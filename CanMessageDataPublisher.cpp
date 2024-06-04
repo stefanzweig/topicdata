@@ -35,7 +35,7 @@ class CanMessageDataPublisher
 {
 private:
 
-    canMessages hello_;
+    canMessages can_message_s;
 
     DomainParticipant* participant_;
 
@@ -116,8 +116,8 @@ public:
     //!Initialize the publisher
     bool init()
     {
-        hello_.len(0);
-        // hello_.message("CanMessageData");
+        can_message_s.len(0);
+        // can_message_s.message("CanMessageData");
 
         DomainParticipantQos participantQos;
         participantQos.name("Participant_publisher");
@@ -166,8 +166,8 @@ public:
         if (listener_.matched_ > 0)
         {
             // std::cout << "publishing..." << std::endl;
-            hello_.len(hello_.len() + 1);
-            writer_->write(&hello_);
+            can_message_s.len(can_message_s.len() + 1);
+            writer_->write(&can_message_s);
             return true;
         }
         return false;
@@ -184,8 +184,8 @@ public:
             if (publish())
             {
                 samples_sent++;
-                std::cout << "Message Length: " << hello_.len() << " SENT" << std::endl;
-                // std::cout << "Message Data: " << hello_.canMsgs() << " SENT" << std::endl;
+                std::cout << "Message Length: " << can_message_s.len() << " SENT" << std::endl;
+                // std::cout << "Message Data: " << can_message_s.canMsgs() << " SENT" << std::endl;
             }
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }}
