@@ -120,8 +120,8 @@ public:
         // can_message_s.message("CanMessageData");
 
         DomainParticipantQos participantQos;
-        participantQos.name("Participant_Stefan");
-        participant_ = DomainParticipantFactory::get_instance()->create_participant(0, participantQos);
+        participantQos.name("Participant_subscriber");
+        participant_ = DomainParticipantFactory::get_instance()->create_participant(90, participantQos);
 
         if (participant_ == nullptr)
         {
